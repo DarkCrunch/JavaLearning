@@ -116,7 +116,33 @@ public class Java004Operadores {
             *El resultado de una expresión inválida, por ejemplo, dividir 
              infinito por infinito, no genera una excepción ni un error de 
              ejecución: es un valor NaN (Not a Number).
-        */
+        
+        OPERADORES ARITMETICOS INCREMENTABLES
+        Los operadores aritméticos incrementales son operadores unarios (un 
+        único operando). El operando puede ser numérico o de tipo char y el 
+        resultado es del mismo tipo que el operando. Estos operadores pueden 
+        emplearse de dos formas dependiendo de su posición con respecto al 
+        operando.
+        
+        OPERADOR    DESCRIPCION                             EJEMPLO   RESULTADO
+           ++    incremento                                   4++       5
+                 i++ primero se utiliza la variable y luego   a=5;
+                 se incrementa su valor                      b=a++;    a=6 y b=5
+                 ++i primero se incrementa el valor de la     a=5;
+                 variable y luego se utiliza                 b=++a;    a=6 y b=6
+           --    decremento                                   4--         3
+        
+        Estos operadores suelen sustituir a veces al operador asignacion y
+        tambien suelen aparecer en bucles for.
+        
+        OPERADORES DE RELACION
+        Realizan comparaciones entre datos compatibles de tipos primitivos 
+        (numéricos, carácter y booleanos) teniendo siempre un resultado booleano
+        Los operandos booleanos sólo pueden emplear los operadores de igualdad y
+        desigualdad.
+        
+        OPERADOR    DESCRIPCION
+        */ 
     }
 
 }
