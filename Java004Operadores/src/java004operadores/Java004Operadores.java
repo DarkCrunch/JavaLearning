@@ -5,6 +5,8 @@
  */
 package java004operadores;
 
+import java.util.Scanner;
+
 /**
  *
  * @author DARKCRUNCH
@@ -141,8 +143,83 @@ public class Java004Operadores {
         Los operandos booleanos sólo pueden emplear los operadores de igualdad y
         desigualdad.
         
-        OPERADOR    DESCRIPCION
+        OPERADOR    DESCRIPCION                      EJEMPLO     RESULTADO
+          ==         igual que                      7 == 38        false
+          !=        distinto que                    'a'!='k'        true
+          <         menor que                       'G'<'B'        false
+          >         mayor que                       'B'>'A'         true
+          <=        menor o igual que               7.5<=7.38      false
+          >=        mayor o igual que               38>=7           true
         */ 
+        int h = 20, i = 10;
+        String x = "Thank", y = "You";
+        int ar[] = { 1, 2, 3 };
+        int br[] = { 1, 2, 3 };
+        boolean condicion = true;
+ 
+        //varios operadores condicionales
+        System.out.println("h == i :" + (h == i));
+        System.out.println("h < i :" + (h < i));
+        System.out.println("h <= i :" + (h <= i));
+        System.out.println("h > i :" + (h > i));
+        System.out.println("h >= i :" + (h >= i));
+        System.out.println("h != i :" + (h != i));
+ 
+        // Los Arrays no se pueden comparar con
+        // operadores relacionales porque los objetos
+        // almacenan referencias, mas no el valor
+        System.out.println("x == y : " + (ar == br));
+ 
+        System.out.println("condicion==true :" + (condicion == true));
+        /*
+        OPERADORES LOGICOS O BOOLEANOS
+        Realizan operaciones sobre datos booleanos y tienen como resultado un 
+        valor booleano. En la siguiente tabla se resumen los diferentes 
+        operadores de esta categoría.
+        
+        OPERADOR            DESCRIPCION                 EJEMPLO       RESULTADO
+           !     negacion NOT(unario)                   !false          true
+                                                       !(5==5)         false
+           |     suma logica OR(binario)              true | false      true
+                                                      (5==5)|(5<4)      true
+           ^     suma logica exclusiva XOR(binario)   true ^ false      true
+                                                      (5==5)|(5<4)      true
+           &     producto logico AND(binario)         true & false     false
+                                                      (5==5)|(5<4)     false
+           ||    producto logico con cortocircuito:   true || false     true
+                 si el primer operando es true        (5==5)||(5<4)     true
+                 entonces el segundo se salta y el
+                 resultado es true
+           &&    producto logico con cortocircuito:   false && true    false
+                 si el primer operando es false        (5==5)|(5<4)    false
+                 entonces el segundo se salta y el
+                 resultado es false
+        
+        Para mejorar el rendimiento de ejecución del código es recomendable 
+        emplear en las expresiones booleanas el operador && en lugar del 
+        operador &. En este caso es conveniente situar la condición más 
+        propensa a ser falsa en el término de la izquierda. Esta técnica puede 
+        reducir el tiempo de ejecución del programa. De forma equivalente es 
+        preferible emplear el operador || al operador |. En este caso es 
+        conveniente colocar la condición más propensa a ser verdadera en el 
+        término de la izquierda
+        */
+        String ca1 = "java";
+        String ca2 = "desdecero";
+ 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese usuario:");
+        String user = sc.next();
+        System.out.print("Ingrese contraseña:");
+        String pass = sc.next();
+ 
+        // Verifique si el nombre de usuario y la contraseña coinciden o no.
+        if ((user.equals(ca1) && pass.equals(ca2)) || 
+                (user.equals(ca1) && pass.equals(ca2))) {
+            System.out.println("Bienvenido usuario.");
+        } else {
+            System.out.println("ID o Contraseña equivocada");
+        }
     }
 
 }
