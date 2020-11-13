@@ -133,10 +133,39 @@ public class Java004Operadores {
                  ++i primero se incrementa el valor de la     a=5;
                  variable y luego se utiliza                 b=++a;    a=6 y b=6
            --    decremento                                   4--         3
+                 i-- primero se utiliza la variable y luego   a=5;
+                 se decrementa su valor                      b=a--;    a=4 y b=5
+                 --i primero se decrementa el valor de la     a=5;
+                 variable y luego se utiliza                 b=--a;    a=4 y b=4
         
         Estos operadores suelen sustituir a veces al operador asignacion y
-        tambien suelen aparecer en bucles for.
-        
+        tambien suelen aparecer en bucles for.*/
+        int aa = 20, bb = 10, cc = 0, dd = 20, ee = 40;
+        boolean condicion = true;
+
+        // operador de pre-incremento
+        // a = a+1 y entonces c = a;
+        cc = ++aa;
+        System.out.println("Valor de c (++aa) = " + cc);
+
+        // operador de post-incremento
+        // c=b entonces b=b+1 (b pasa a ser 11)
+        cc = bb++;
+        System.out.println("Valor de c (bb++) = " + cc);
+
+        // operador de pre-decremento
+        // d=d-1 entonces c=d
+        cc = --dd;
+        System.out.println("Valor de cc (--dd) = " + cc);
+
+        // operador de post-decremento
+        // cc=ee entonces ee=ee-1 (e pasa a ser 39)
+        cc = ee--;
+        System.out.println("Valor de cc (ee--) = " + cc);
+
+        // Operador lógico not
+        System.out.println("Valor de !condition = " + !condicion);
+        /*
         OPERADORES DE RELACION
         Realizan comparaciones entre datos compatibles de tipos primitivos 
         (numéricos, carácter y booleanos) teniendo siempre un resultado booleano
@@ -155,7 +184,7 @@ public class Java004Operadores {
         String x = "Thank", y = "You";
         int ar[] = { 1, 2, 3 };
         int br[] = { 1, 2, 3 };
-        boolean condicion = true;
+        boolean condicional = true;
  
         //varios operadores condicionales
         System.out.println("h == i :" + (h == i));
@@ -170,7 +199,7 @@ public class Java004Operadores {
         // almacenan referencias, mas no el valor
         System.out.println("x == y : " + (ar == br));
  
-        System.out.println("condicion==true :" + (condicion == true));
+        System.out.println("condicion==true :" + (condicional == true));
         /*
         OPERADORES LOGICOS O BOOLEANOS
         Realizan operaciones sobre datos booleanos y tienen como resultado un 
@@ -220,6 +249,76 @@ public class Java004Operadores {
         } else {
             System.out.println("ID o Contraseña equivocada");
         }
+        /*
+        OPERADOR CONDICIONAL O TERNARIO
+        Ternario es una versión abreviada de la declaración if-else. Tiene tres 
+        operandos y de ahí el nombre ternario. El formato general es:
+        La declaración anterior significa que si la condición se evalúa como 
+        verdadera, entonces ejecuta las instrucciones después del '?' de lo 
+        contrario, ejecuta las instrucciones después de ':'.
+        Sintaxis:
+        
+        expresionLogica ? expresion_1 : expresion_2
+        
+        OPERADOR    DESCRIPCION                 EJEMPLO               RESULTADO
+           ?:    operador condicional           a=4;
+                                       b = a == 4 ? a+5; : 6-a;          b=9
+                                       b = a > 4 ? a*7; : a+8;           b=12  
+        
+        La sentencia de asignación:
+
+            valor = (expresionLogica ? expresion_1 : expresion_2);
+        
+        como se verá más adelante es equivalente a:
+
+            if (expresionLogica)
+                valor = expresion_1;
+            else
+                valor = expresion_2
+        */
+        int j = 20, k = 10, l = 30, result;
+ 
+        //el resultado obtiene el máximo de tres
+        //numeros
+        result = ((j > k) ? (j > l) ? j : 
+                   l : (k > l) ? k : l);
+        System.out.println("Máximo de tres números = "+result);
+        /*
+        OPERADORES DE BIT
+        Tienen operandos de tipo entero (o char) y un resultado de tipo entero. 
+        Realizan operaciones con dígitos (ceros y unos) de la representación 
+        binaria de los operandos. Exceptuando al operador negación, los demás 
+        operadores son binarios. En la siguiente tabla se resumen los diferentes 
+        operadores de esta categoría.
+        
+        OPERADOR DESCRIPCION                                EJEMPLO    RESULTADO
+            ~    negacion o complemento binario              ~12          -13
+            |    suma logica binaria OR(binario)            12|10          14
+            ^    suma logica exclusiva XOR(binario)         12^10          6
+            &    producto logico binario AND(binario)       12&10          8
+           <<    desplaza a la izquierda los bits del 1°     7<<2          28
+                 operando tantas veces como indica el 2°    -7<<2         -28
+                 operando(por la derecha siempre entra
+                 un cero)
+           >>    desplaza a la derecha los bits del 1°      7>>2           1
+                 operando tantas veces como indica el 2°   -7>>2          -2
+                 operando(por la izquierda entra siempre
+                 el mismo bit mas significativo anterior)
+          >>>    desplaza a la derecha de los bits del 1°   7>>>2          1
+                 operando tantas veces como indica el 2°   -7>>>2     1073741822
+                 operando sin signo(por la izquierda
+                 entra siempre un cero)          
+        */
+        System.out.println("Negacion(~) = "+(~12));
+        System.out.println("OR(|) = "+(12|10));
+        System.out.println("XOR(^) = "+(12^10));
+        System.out.println("AND(&) = "+(12&10));
+        System.out.println("desplazar(<<) = "+(7<<2));
+        System.out.println("desplazar(<<) = "+(-7<<2));
+        System.out.println("desplazar(>>) = "+(7>>2));
+        System.out.println("desplazar(>>) = "+(-7>>2));
+        System.out.println("desplazar(>>>) = "+(7>>>2));
+        System.out.println("desplazar(>>>) = "+(-7>>>2));
     }
 
 }
