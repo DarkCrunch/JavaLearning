@@ -319,6 +319,188 @@ public class Java004Operadores {
         System.out.println("desplazar(>>) = "+(-7>>2));
         System.out.println("desplazar(>>>) = "+(7>>>2));
         System.out.println("desplazar(>>>) = "+(-7>>>2));
+        
+        int ax = 0x0005;
+        int bx = 0x0007;
+ 
+        // bitwise AND
+        // 0101 & 0111=0101
+        System.out.println("ax&bx = " + (ax & bx));
+ 
+        // bitwise or
+        // 0101 | 0111=0111
+        System.out.println("ax|bx = " + (ax | bx));
+ 
+        // bitwise xor
+        // 0101 ^ 0111=0010
+        System.out.println("ax^bx = " + (ax ^ bx));
+ 
+        // bitwise complemento
+        // ~0101=1010
+        System.out.println("~ax = " + ~ax);
+ 
+        // también se puede combinar con el
+        // operador de asignación
+        // ax = ax&bx
+        ax &= bx;
+        System.out.println("ax= " + ax);
+        
+        int ay = 0x0005;
+        int by = -10;
+ 
+        // operador de desplazamiento a la izquierda
+        // 0000 0101<<2 =0001 0100(20)
+        // similar ay 5*(2^2)
+        System.out.println("ay<<2 = " + (ay << 2));
+ 
+        // operador de desplazamiento a la derecha
+        // 0000 0101 >> 2 =0000 0001(1)
+        // similar a 5/(2^2)
+        System.out.println("ay>>2 = " + (ay >> 2));
+         
+        // operador de cambio a la derecha sin firmar
+        System.out.println("by>>>2 = "+ (by >>> 2));
+        /*
+        OPERADOR DE INSTANCIA(instanceof)
+        El operador de instancia se usa para verificar el tipo. Se puede usar 
+        para probar si un objeto es una instancia de una clase, una subclase o 
+        una interfaz.
+ 
+        Person obj1 = new Person();
+        Person obj2 = new Boy();
+ 
+        // Como obj1 es de tipo Person, no es una
+        // instancia de Boy o interfaz
+        System.out.println("obj1 instanceof Person: " + 
+                           (obj1 instanceof Person));
+        System.out.println("obj1 instanceof Boy: " + 
+                           (obj1 instanceof Boy));
+        System.out.println("obj1 instanceof MyInterface: " + 
+                           (obj1 instanceof MyInterface));
+ 
+        // Dado que obj2 es de tipo Boy, cuya clase padre es
+        // Person e implementa la interfaz Myinterface
+        // es una instancia de todas estas clases
+        System.out.println("obj2 instanceof Person: " + 
+                           (obj2 instanceof Person));
+        System.out.println("obj2 instanceof Boy: " + 
+                           (obj2 instanceof Boy));
+        System.out.println("obj2 instanceof MyInterface: " + 
+                           (obj2 instanceof MyInterface));
+        class Person 
+        {
+
+        }
+
+        class Boy extends Person implements MyInterface 
+        {
+
+        }
+
+        interface MyInterface 
+        {
+
+        }
+        
+        PRIORIDAD ENTRE OPERADORES
+        Si dos operadores se encuentran en la misma expresión, el orden en el 
+        que se evalúan puede determinar el valor de la expresión. En la 
+        siguiente tabla se muestra el orden o prioridad en el que se ejecutan 
+        los operadores que se encuentren en la misma sentencia. Los operadores 
+        de la misma prioridad se evalúan de izquierda a derecha dentro de la 
+        expresión
+        
+        PRIOR   OPERADOR     TIPO         OPERACION
+          1       ++      aritmetico      incremento previo o posterior unario
+                  --      aritmetico      decremento previo o posterior unario
+                  +,-     aritmetico      suma unaria, resta unaria
+                  ~       integral        cambio de bits(unario)
+                  !       booleano        negacion(unario)
+          2     (tipo)    cualquiera
+          3     *,/,%     aritmetico      multiplicacion, division, residuo
+          4       +,-     aritmetico      suma resta
+                  +       cadena          concatenacion de cadenas
+          5       <<      integral        desplazamiento de bits a izquierda
+                  >>      integral        desplazamiento de bits a derecha con
+                                          inclusion de signo
+                 >>>      integral        desplazamiento de bits a derecha con
+                                          inclusion de cero
+          6     <,<=      aritmetico      menor que, menor o igual que
+                >,>=      aritmetico      mayor que, mayor o igual que
+              instanceof  objeto,tipo     comparacion de tipos
+          7       ==      primitivo       igual(valores identicos)
+                  !=      primitivo       desigual(valores diferentes)
+                  ==      objeto          igual(referencia al mismo objeto)
+                  !=      objeto          desigual(referencia a distintos 
+                                          objetos)
+          8       &       integral        cambio de bits AND
+                  &       booleano        producto booleano
+          9       ^       integral        cambio de bits XOR
+                  ^       booleano        suma exclusiva booleana
+          10      |       integral        cambio de bits OR
+                  |       booleano        suma booleana
+          11      &&      booleano        AND condicional
+          12      ||      booleano        OR condicional
+          13      ?:      booleano,       operador condicional(ternario)
+                          cualquiera
+          14      =       variable,       asignacion
+               *,/=,%=    cualquiera      asignacion con operacion
+               +=,-=
+               <<=,>>=
+               >>>=
+               &=,^=,|=
+        
+        
+        SEPARADORES
+        Existen algunos caracteres que tienen un significado especial en el 
+        lenguaje Java. En la siguiente tabla se resumen los diferentes 
+        separadores que pueden encontrarse en el código fuente de un programa.
+        
+        SEPARADOR DESCRIPCION
+            ()    permiten modificar la prioridad de una expresion, contener
+                  expresiones para el control de flujo y realizar conversiones
+                  de tipo. Por otro lado pueden contener la lista de parametros
+                  o argumentos, tanto en la definicion de un metodo como en la
+                  llamada al mismo.
+            {}    permiten definir bloques de codigo y ambitos y contener los
+                  valores iniciales de las variables array
+            []    permiten declarar variables de tipo array(vectores o matrices)
+                  y referenciar sus elementos.
+            ;     permite separar sentencias.
+            ,     permite separar identificadores consecutivos en la declaracion
+                  de variables y en las listas de parametros. tambien se emplea
+                  para encadenar sentencias dentro de un bucle for.
+            .     permite separar el nombre de un atributo o metodo de su 
+                  instancia de referencia. tambien separa el identificador de un
+                  paquete de los subpaquetes y clases.
+        
+        SECUENCIAS DE ESCAPE EN JAVA
+        Los valores numéricos y de texto en los programas de Java se conocen 
+        como “literales”; no representan nada, pero son, literalmente, lo que 
+        ves. Los literales normalmente se desprenden de las palabras clave del 
+        lenguaje Java, pero cuando se requieren comillas dobles o comillas 
+        simples dentro de un valor de String, es necesario indicar que el 
+        carácter de cita debe tratarse LITERALMENTE para evitar terminar 
+        prematuramente el String. Esto se logra fácilmente mediante el prefijo 
+        inmediato de cada carácter de comillas anidado con el operador de 
+        escape \
+        Ejemplo
+        */
+        String cita = " \"Java debe ser un territorio neutral, la Suiza de la tecnología informática.\"dijo James Gosling";
+        /*
+        Además, el operador de escape \ ofrece una variedad de secuencias de 
+        escape muy útiles como son los siguientes
+        
+        ESCAPE     DESCRIPCION
+         \n        nueva linea
+         \t        tabulador
+         \b        backspace
+         \r        retorno del carro
+         \f        form feed
+         \\        barra invertida(\)
+         \'        comilla simple
+         \"        comilla doble
+        */
     }
 
 }
