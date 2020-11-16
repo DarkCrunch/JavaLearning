@@ -59,7 +59,7 @@ public class Java006Bucles {
             [iteracion;]
         }
         
-        Se recuerda que el vector args contiene todos los parámetros o 
+        Recordemos que el vector args contiene todos los parámetros o 
         argumentos indicados en la línea de comandos. El primer elemento de este 
         vector es args[0]. El tamaño del vector puede determinarse añadiendo 
         .length a su identificador. Como el índice del primer elemento del 
@@ -67,8 +67,58 @@ public class Java006Bucles {
         del vector tiene índice n-1. En el ejemplo anterior de ejecución del 
         programa eco, args[0] toma como valor la cadena "Esto", args[1] vale 
         "es", args[2] vale "una" y args[3] vale "prueba".
-        
         */
+        int x = 1;
+        // Salir cuando x llega a ser mayor que 4
+        while (x <= 4)
+        {
+            System.out.println("Valor de x: " + x);
+            //incrementa el valor de x para la siguiente iteración
+            x++;
+        }
+        /*
+        SENTENCIA DO-WHILE
+        Es un buble o sentencia repetitiva con una condicion al final. Se
+        ejecuta una sentencia mientras sea cierta una condicion. En este caso,
+        la sentencia se ejecuta al menos una vez.
+        
+        Sintaxis
+        do {
+            sentencias;
+            [iteracion;] 
+        } while (expresionLogica);
+        */
+        int y = 21;
+        do
+        {
+            //El código dentro del do se imprime incluso
+            //si la condición es falsa
+            System.out.println("Valor de x :" + y);
+            y++;
+        }
+        while (y < 20);
+        /*
+        SENTENCIA FOR-EACH
+        Java también incluye otra versión del bucle for introducido en Java 5. 
+        La mejora del bucle for proporciona una forma más sencilla de iterar a 
+        través de los elementos de una colección o matriz. Es inflexible y debe 
+        usarse solo cuando existe la necesidad de recorrer los elementos de 
+        forma secuencial sin conocer el índice del elemento procesado 
+        actualmente.
+        
+        Sintaxis
+        for (Elemento T:Colección de obj/array)
+        {
+            declaraciones;
+        }
+        */
+         String array1[] = {"Ron", "Harry", "Hermoine"};
+ 
+        //mejorado para for
+        for (String z:array1)
+        {
+            System.out.println(z);
+        }
     }
     
 }
